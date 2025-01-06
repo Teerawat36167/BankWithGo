@@ -54,6 +54,10 @@ jobs:
         kubectl config current-context
         kubectl get nodes
 
+    - name: Debug Authentication
+      run: |
+        kubectl --v=9 get nodes
+
     - name: Deploy image to Amazon EKS
       run: |
         kubectl apply -f eks/aws-auth.yaml
