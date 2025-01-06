@@ -49,15 +49,6 @@ jobs:
     - name: Update kube config
       run: aws eks update-kubeconfig --name simple-bank --region ap-southeast-2
 
-    - name: Verify Kubernetes Context
-      run: |
-        kubectl config current-context
-        kubectl get nodes
-
-    - name: Debug Authentication
-      run: |
-        kubectl --v=9 get nodes
-
     - name: Deploy image to Amazon EKS
       run: |
         kubectl apply -f eks/aws-auth.yaml
