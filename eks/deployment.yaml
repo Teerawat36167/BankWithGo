@@ -19,5 +19,6 @@ spec:
         # image: 423623830079.dkr.ecr.ap-southeast-2.amazonaws.com/simplebank:1219af500be7b273bf6cad98cbb6d60844db19a9
         image: 423623830079.dkr.ecr.ap-southeast-2.amazonaws.com/simplebank:latest
         # image: tee36167/simple-bank:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
