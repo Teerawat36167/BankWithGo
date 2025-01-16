@@ -49,4 +49,7 @@ proto:
 evans:
 	evans --host localhost --port 9090 -r repl
 
-.PHONY: postgres createdb dropdb migrateup migratedown sqlc test server mock db_docs db_schema proto evans
+grpcui:
+	grpcui -plaintext localhost:9090
+
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc test server mock db_docs db_schema proto evans grpcui
