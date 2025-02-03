@@ -55,4 +55,7 @@ evans:
 grpcui:
 	grpcui -plaintext localhost:9090
 
-.PHONY: postgres createdb dropdb migrateup migratedown sqlc test server mock db_docs db_schema proto evans grpcui
+redis:
+	docker run --name redis -p 6379:6379 -d redis:7-alpine
+
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc test server mock db_docs db_schema proto evans grpcui redis
