@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/Teerawat36167/BankWithGo/util"
 	"github.com/gin-gonic/gin"
 )
 
@@ -67,6 +68,7 @@ func (server *Server) renewAccessToken(ctx *gin.Context) {
 
 	accessToken, accessPayload, err := server.tokenMaker.CreateToken(
 		refreshPayload.Username,
+		util.DepositorRole,
 		server.config.AccessTokenDuration,
 	)
 	if err != nil {
